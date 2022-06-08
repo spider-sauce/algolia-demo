@@ -168,7 +168,7 @@ em {
 }
 
 .ais-hits {
-    display: flex;
+    display: inline-block;
     flex-wrap: wrap;
 }
 

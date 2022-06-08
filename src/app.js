@@ -62,7 +62,7 @@ search.addWidget(
         attributeName: "type",
         autoHideContainer: false,
         templates: {
-            header: "Categories"
+            header: "Sources"
         }
     })
 );
