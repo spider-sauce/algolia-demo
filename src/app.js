@@ -6,6 +6,7 @@ const search = instantsearch({
     appId: "RO95H65NEO",
     apiKey: "eb980e41546c08d3e422562074fa0380",
     indexName: "crawler_help_center",
+    routing: true,
     searchParameters: {
         hitsPerPage: 5,
         attributesToSnippet: ["description:24"],
