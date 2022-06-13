@@ -1,15 +1,6 @@
-/* global instantsearch */
 import React from 'react';
-
 import algoliasearch from 'algoliasearch/lite';
-import {
-    Breadcrumb,
-    Highlight,
-    Hits,
-    InstantSearch,
-    Pagination,
-    SearchBox,
-} from 'react-instantsearch-hooks-web';
+import { InstantSearch, SearchBox, Hits, Highlight } from 'react-instantsearch-hooks-web';
 
 const searchClient = algoliasearch('RO95H65NEO', '8d249abc4671e5554fe8f451ffa5db50');
 
@@ -28,10 +19,11 @@ function Hit({ hit }) {
 
 function App() {
   return (
-    <InstantSearch searchClient={searchClient} indexName='crawler_help_center'>
+    <InstantSearch searchClient={searchClient} indexName='instant_search'>
       <SearchBox />
       <Hits hitComponent={Hit} />
-      <Pagination />
     </InstantSearch>
   );
 }
+
+export default App;
