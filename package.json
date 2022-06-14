@@ -13,6 +13,7 @@
     "algoliasearch": "4.13.1",
     "parcel-bundler": "^1.12.5",
     "react": "18.1.0",
+    "react-dom": "18.1.0",
     "react-instantsearch-hooks-web": "6.27.0"
   }
 }
