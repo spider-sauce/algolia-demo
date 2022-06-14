@@ -3,7 +3,14 @@ import algoliasearch from 'algoliasearch/lite';
 import { Breadcrumb, Configure, InstantSearch, SearchBox, Hits, Highlight, Pagination } from 'react-instantsearch-hooks-web';
 
 const searchClient = algoliasearch('RO95H65NEO', '8d249abc4671e5554fe8f451ffa5db50');
-
+/**
+ * add snipet to return smaller description
+ * fix breadcrumbs
+ * fix pagination, now with bullets
+ * fix results returning as a numbered list
+ * add side bar wuth preview
+ * add highlight in the description
+ */
 function Hit({ hit }) {
     console.log(JSON.stringify(hit));
     return (
