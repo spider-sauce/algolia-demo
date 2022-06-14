@@ -19,9 +19,9 @@ function Hit({ hit }) {
 
 function App() {
   return (
-    <InstantSearch searchClient={searchClient} indexName='instant_search'>
+    <InstantSearch searchClient={searchClient} indexName='crawler_help_center'>
+      <h1>Hello App</h1>
       <SearchBox />
-      <Hits hitComponent={Hit} />
     </InstantSearch>
   );
 }
