@@ -16,11 +16,15 @@ const searchClient = algoliasearch('RO95H65NEO', '8d249abc4671e5554fe8f451ffa5db
 function App() {
   return (
     <InstantSearch searchClient={searchClient} indexName='crawler_help_center'>
-      <Configure hitsPerPage={20} />
-      <SearchBox />
-      <Hits hitComponent={Hit} />
-      <Breadcrumb attributes={['']} />
-      <Pagination />
+      <div>
+        <Configure hitsPerPage={20} />
+        <SearchBox />
+        <Hits hitComponent={Hit} />
+        {/* <Breadcrumb attributes={['']} /> */}
+        <Pagination />
+      </div>
+      <div>
+      </div>
     </InstantSearch>
   );
 }

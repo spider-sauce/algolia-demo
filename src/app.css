@@ -503,3 +503,7 @@ pagination:empty:before {
 .ais-Pagination li {
     padding: 1%;
 }
+
+#app {
+    display: flex;
+}
