@@ -1,5 +1,43 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
+:root {
+/*Sauce Labs design system colors */
+  --ds-white: #fff;
+
+  --ds-gray-50: #f7f8fa;
+  --ds-gray-100: #eff2f6;
+  --ds-gray-200: #e8ebf1;
+  --ds-gray-300: #dbe0ea;
+  --ds-gray-400: #b6becc;
+  --ds-gray-500: #979eab;
+  --ds-gray-600: #6d7584;
+  --ds-gray-700: #4d4d4d;
+  --ds-gray-900: #1e2127;
+
+  --ds-green-50: #ebf8e6;
+  --ds-green-400: #6cb841;
+  --ds-green-600: #41990f;
+
+  --ds-orange-50: #fff2e2;
+  --ds-orange-600: #ff8514;
+
+  --ds-red-50: #ffeceb;
+  --ds-red-100: #ffccc9;
+  --ds-red-600: #e2231a;
+  --ds-red-900: #ae0f0f;
+  --ds-red-1000: #920606;
+  --ds-red-1100: #7a0000;
+  --ds-red-sauce: #e2231a;
+
+  --ds-blue-50: #e6f1fd;
+  --ds-blue-100: #bcdcfd;
+  --ds-blue-200: #95c7f9;
+  --ds-blue-400: #54a3f3;
+  --ds-blue-700: #0e75dd;
+  --ds-blue-800: #0d65be;
+  --ds-blue-900: #004a90;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -170,6 +208,10 @@ em {
 .ais-hits {
     display: inline-block;
     flex-wrap: wrap;
+}
+
+.ais-Hits ol {
+    list-style-type: none;
 }
 
 .ais-refinement-list--header,
@@ -393,17 +435,17 @@ footer {
 #brands:empty:before,
 #price:empty:before {
     display: block;
-    color: #999;
+    color: rgb(153, 153, 153);
     padding: 16px;
 }
 
-#searchbox:empty,
-#hits:empty,
-#categories:empty,
-#stats:empty,
-#pagination:empty,
-#brands:empty,
-#price:empty {
+searchbox:empty,
+hits:empty,
+categories:empty,
+stats:empty,
+pagination:empty,
+brands:empty,
+price:empty {
     padding: 0;
     background: none;
     border: dashed 3px #ddd;
@@ -411,18 +453,18 @@ footer {
     border-radius: 4px;
 }
 
-#searchbox:empty,
-#hits:empty,
-#categories:empty,
-#brands:empty {
+searchbox:empty,
+hits:empty,
+categories:empty,
+brands:empty {
     margin-bottom: 24px;
 }
 
-#searchbox:empty:before {
+searchbox:empty:before {
     content: "Uncomment the searchBox widget to add a search bar.";
 }
 
-#hits:empty:before {
+hits:empty:before {
     content: "Uncomment the hits widget to add hits list.";
 }
 
@@ -434,6 +476,30 @@ footer {
     content: "Uncomment the categories widget to add categories list.";
 }
 
-#pagination:empty:before {
+pagination:empty:before {
     content: "Uncomment the pagination widget to add pagination.";
+}
+
+/* CUSTOM */
+
+.ais-Highlight-highlighted {
+    background: var(--ds-blue-400);
+}
+
+/* Breadcrumbs */
+.ais-Breadcrumb ul {
+    list-style-type: none;
+}
+
+.ais-Breadcrumb-link {
+    cursor: pointer;
+}
+
+/* Pagination styles */
+.ais-Pagination ul {
+    list-style-type: none;
+    display: flex;
+}
+.ais-Pagination li {
+    padding: 1%;
 }
