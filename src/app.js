@@ -26,7 +26,7 @@ function App() {
       <main>
         <Hits hitComponent={Hit} />
         <Breadcrumb
-          attributes={['hierarchicalCategories.lvl0', 'hierarchicalCategories.lvl1', 'hierarchicalCategories.lvl2']}
+          attributes={['breadcrumbs.lvl0', 'breadcrumbs.lvl1', 'breadcrumbs.lvl2']}
         />
         <div></div>
         <Pagination />
