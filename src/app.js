@@ -13,18 +13,24 @@ const searchClient = algoliasearch('RO95H65NEO', '8d249abc4671e5554fe8f451ffa5db
  * add highlight in the description
  */
 
+const results = algoliasearch
+
 function App() {
+  console.log(results);
   return (
     <InstantSearch searchClient={searchClient} indexName='crawler_help_center'>
-      <div>
-        <Configure hitsPerPage={20} />
-        <SearchBox />
+      <header>
+        <Configure hitsPerPage={15} />
+        <SearchBox placeholder='What are you searching for?' />
+      </header>
+      <main>
         <Hits hitComponent={Hit} />
-        {/* <Breadcrumb attributes={['']} /> */}
+        <Breadcrumb
+          attributes={['hierarchicalCategories.lvl0', 'hierarchicalCategories.lvl1', 'hierarchicalCategories.lvl2']}
+        />
+        <div></div>
         <Pagination />
-      </div>
-      <div>
-      </div>
+      </main>
     </InstantSearch>
   );
 }
