@@ -13,8 +13,16 @@
     "@docsearch/css": "3.0.0",
     "algoliasearch": "4.13.1",
     "parcel-bundler": "^1.12.5",
-    "react": "18.1.0",
-    "react-dom": "18.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-instantsearch-dom": "6.30.1",
     "react-instantsearch-hooks-web": "6.27.0"
+  },
+  "devDependencies": {
+    "eslint": "8.19.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-react": "7.30.1",
+    "prettier": "2.7.1"
   }
 }
