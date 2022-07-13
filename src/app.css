@@ -507,3 +507,12 @@ pagination:empty:before {
 #app {
     display: flex;
 }
+
+.myCrumb {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+    --text-opacity: 1;
+    color: rgba(129,145,247,var(--text-opacity));
+}
