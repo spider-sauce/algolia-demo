@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import algoliasearch from 'algoliasearch/lite'
 import {
     Configure,
@@ -9,8 +9,7 @@ import {
 } from 'react-instantsearch-hooks-web'
 
 import Hit from './components/hit.js'
-import Modal from './components/modal.js'
-import useModal from './components/useModal.js'
+import Modal from './components/modal.jsx'
 
 const searchClient = algoliasearch(
     'RO95H65NEO',
@@ -25,7 +24,7 @@ const searchClient = algoliasearch(
  */
 
 function App() {
-    const {isShowing, toggle} = useModal()
+    const modal = useRef(null)
     return (
         <InstantSearch
             searchClient={searchClient}
@@ -33,16 +32,14 @@ function App() {
             <header>
                 <Configure hitsPerPage={15} />
                 <SearchBox placeholder="What are you searching for?" />
-                <button className="button-default" onClick={toggle}>
-                    Show Modal
-                </button>
+                <button onClick={() => modal.current.open()}>Show Modal</button>
             </header>
             <main>
                 <Hits hitComponent={Hit} />
                 <div>
                     <Pagination />
                 </div>
-                <Modal isShowing={isShowing} hide={toggle} />
+                <Modal ref={modal}>Hello Modal</Modal>
             </main>
         </InstantSearch>
     )

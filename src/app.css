@@ -590,6 +590,7 @@ pagination:empty:before {
   color: #c3c0c0;
 }
 
+
 @keyframes fade-in {
   0% {
     animation-timing-function: cubic-bezier(0.2242, 0.7499, 0.3142, 0.8148);
