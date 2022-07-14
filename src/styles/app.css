@@ -1,42 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
-
-:root {
-/*Sauce Labs design system colors */
-  --ds-white: #fff;
-
-  --ds-gray-50: #f7f8fa;
-  --ds-gray-100: #eff2f6;
-  --ds-gray-200: #e8ebf1;
-  --ds-gray-300: #dbe0ea;
-  --ds-gray-400: #b6becc;
-  --ds-gray-500: #979eab;
-  --ds-gray-600: #6d7584;
-  --ds-gray-700: #4d4d4d;
-  --ds-gray-900: #1e2127;
-
-  --ds-green-50: #ebf8e6;
-  --ds-green-400: #6cb841;
-  --ds-green-600: #41990f;
-
-  --ds-orange-50: #fff2e2;
-  --ds-orange-600: #ff8514;
-
-  --ds-red-50: #ffeceb;
-  --ds-red-100: #ffccc9;
-  --ds-red-600: #e2231a;
-  --ds-red-900: #ae0f0f;
-  --ds-red-1000: #920606;
-  --ds-red-1100: #7a0000;
-  --ds-red-sauce: #e2231a;
-
-  --ds-blue-50: #e6f1fd;
-  --ds-blue-100: #bcdcfd;
-  --ds-blue-200: #95c7f9;
-  --ds-blue-400: #54a3f3;
-  --ds-blue-700: #0e75dd;
-  --ds-blue-800: #0d65be;
-  --ds-blue-900: #004a90;
-}
+@import './variables/fonts.modules.css';
+@import './variables/colors.modules.css';
+@import './modal.css';
 
 * {
     box-sizing: border-box;
@@ -47,19 +11,14 @@ html {
 }
 
 html,
-body {
-    padding: 0;
-    margin: 0;
-}
 
 body {
+    font-family: var(--font-family-sans-serif);
     min-height: 100%;
-    padding: 24px;
     font-size: 14px;
     line-height: 24px;
     overflow-y: scroll;
     display: flex;
-    font-family: "Open Sans", sans-serif;
     background: #f0f2f5;
     flex-direction: column;
 }
@@ -517,86 +476,3 @@ pagination:empty:before {
     color: rgba(129,145,247,var(--text-opacity));
 }
 
-/*----------------------------------MODAL-------------------------------------*/
-.modal {
-  position: fixed;
-  overflow: hidden;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.65);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5em 1em;
-  z-index: 999999;
-  box-sizing: border-box;
-}
-
-.modal.modal-fade {
-  animation: fade-in 1s 1 linear;
-  animation-fill-mode: forwards;
-  opacity: 0;
-}
-
-.modal > .modal-overlay {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.modal > .modal-close {
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  color: #5e5e5e;
-  cursor: pointer;
-  font-size: 1.25em;
-  padding: 7px;
-  background: rgba(255, 255, 255, 0.749);
-  border: 1px solid #c3c0c0;
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 999999;
-  box-sizing: border-box;
-  display: inline-block;
-  text-align: center;
-}
-
-.modal > .modal-close:hover {
-  background: rgba(255, 255, 255, 0.989);
-}
-
-.modal > .modal-body {
-  z-index: 2;
-  position: relative;
-  margin: 0 auto;
-  background-color: #303030;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 3px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  max-height: 100%;
-  padding: 15px 20px;
-  color: #c3c0c0;
-}
-
-
-@keyframes fade-in {
-  0% {
-    animation-timing-function: cubic-bezier(0.2242, 0.7499, 0.3142, 0.8148);
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}

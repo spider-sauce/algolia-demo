@@ -31,15 +31,16 @@ function App() {
             indexName="crawler_help_center">
             <header>
                 <Configure hitsPerPage={15} />
-                <SearchBox placeholder="What are you searching for?" />
-                <button onClick={() => modal.current.open()}>Show Modal</button>
+                <SearchBox
+                    placeholder="What are you searching for?"
+                    onSubmit={() => modal.current.open()}
+                />
             </header>
             <main>
-                <Hits hitComponent={Hit} />
-                <div>
+                <Modal ref={modal}>
+                    <Hits hitComponent={Hit} />
                     <Pagination />
-                </div>
-                <Modal ref={modal}>Hello Modal</Modal>
+                </Modal>
             </main>
         </InstantSearch>
     )

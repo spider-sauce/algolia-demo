@@ -6,7 +6,7 @@ import React, {
     useCallback,
 } from 'react'
 import {createPortal} from 'react-dom'
-import '../app.css'
+import '../styles/app.css'
 
 const modalElement = document.getElementById('modal-root')
 
