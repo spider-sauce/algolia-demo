@@ -1,7 +1,6 @@
 import React from 'react'
 import algoliasearch from 'algoliasearch/lite'
 import {
-    Breadcrumb,
     Configure,
     Hits,
     InstantSearch,
@@ -9,9 +8,9 @@ import {
     SearchBox,
 } from 'react-instantsearch-hooks-web'
 
-import {Stats} from 'react-instantsearch-dom'
-
 import Hit from './components/hit.js'
+import Modal from './components/modal.js'
+import useModal from './components/useModal.js'
 
 const searchClient = algoliasearch(
     'RO95H65NEO',
@@ -25,9 +24,8 @@ const searchClient = algoliasearch(
  * add highlight in the description
  */
 
-// const Stats = (nbHits) => <p>{nbHits ? `${nbHits} results` : 'No results'}</p>
-
 function App() {
+    const {isShowing, toggle} = useModal()
     return (
         <InstantSearch
             searchClient={searchClient}
@@ -35,29 +33,16 @@ function App() {
             <header>
                 <Configure hitsPerPage={15} />
                 <SearchBox placeholder="What are you searching for?" />
+                <button className="button-default" onClick={toggle}>
+                    Show Modal
+                </button>
             </header>
             <main>
                 <Hits hitComponent={Hit} />
-                <Breadcrumb
-                    attributes={[
-                        'breadcrumbs.lvl0',
-                        'breadcrumbs.lvl1',
-                        'breadcrumbs.lvl2',
-                    ]}
-                    separator={'>'}
-                />
                 <div>
-                    <Stats
-                        translations={{
-                            stats(nbHits, processingTimeMS) {
-                                return nbHits
-                                    ? `${nbHits.toLocaleString()} results found in ${processingTimeMS.toLocaleString()}ms`
-                                    : 'No results'
-                            },
-                        }}
-                    />
                     <Pagination />
                 </div>
+                <Modal isShowing={isShowing} hide={toggle} />
             </main>
         </InstantSearch>
     )
