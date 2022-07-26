@@ -33,6 +33,14 @@ em {
     text-decoration: underline;
 }
 
+article {
+    border-bottom: 1px solid var(--ds-gray-300);
+}
+article:hover {
+    background: var(--ds-blue-700);
+    color: var(--ds-white);
+}
+
 .search-container {
     flex-grow: 1;
     display: flex;

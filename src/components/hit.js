@@ -4,10 +4,11 @@ import {Highlight, Snippet} from 'react-instantsearch-hooks-web'
 
 function Hit({hit}) {
     // console.log(JSON.stringify(hit))
+    // console.log(hit.breadcrumbs)
     const lastItem = Object.values(hit.breadcrumbs).pop()
     return (
         <div>
-            <h1>{hit.type}</h1>
+            {/* <h1>{hit.type}</h1> */}
             <article>
                 <a href={hit.url}>
                     <h2>
@@ -15,12 +16,10 @@ function Hit({hit}) {
                     </h2>
                 </a>
                 <Snippet hit={hit} attribute="description" />
-                <a>
-                    <p>{hit.url}</p>
-                </a>
-                <a className={'myCrumb'}>
-                    {hit.type}: {lastItem}
-                </a>
+                <p>
+                    {' '}
+                    {hit.type}: {lastItem}{' '}
+                </p>
             </article>
         </div>
     )
