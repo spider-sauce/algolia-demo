@@ -1,0 +1,131 @@
+.ais-SearchBox-input {
+    width: 100%;
+    border: none;
+    height: 104px;
+    font-size: 24px;
+    padding: 24px;
+    color: var(--ds-gray-300);
+    border-bottom: 1px solid var(--ds-gray-300);
+}
+
+.ais-SearchBox-submit {
+    display: none;
+}
+
+.ais-Pagination li {
+    padding: 8px;
+    color: var(--ds-gray-400);
+}
+
+.ais-Pagination-item > .ais-Pagination-item--page > .ais-Pagination-item--selected {
+    background: red;
+}
+
+/*
+.search-container {
+    flex-grow: 1;
+    display: flex;
+    width: 960px;
+    min-height: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width: 1007px) {
+    .search-container {
+        width: 100%;
+    }
+}
+
+.ais-search-box--input {
+    height: auto;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.ais-search-box--input:focus {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+#searchbox {
+    flex-grow: 0;
+    margin-bottom: 8px;
+}
+
+#searchbox {
+    flex-grow: 0;
+}
+
+.ais-search-box {
+    position: relative;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+.ais-search-box--magnifier,
+.ais-search-box--reset {
+    position: absolute;
+    top: 0;
+    left: inherit;
+    margin: 14px 16px;
+    cursor: pointer;
+}
+
+.ais-search-box--magnifier svg,
+.ais-search-box--reset svg {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+
+.ais-search-box--magnifier svg {
+    fill: #5468ff;
+}
+
+.ais-search-box--reset svg {
+    fill: #ed5a6a;
+}
+
+.ais-search-box--magnifier {
+    right: 0;
+}
+
+.ais-search-box--reset {
+    background: none;
+    padding: 0;
+    border: none;
+    right: 30px;
+}
+
+.ais-search-box--input {
+    width: 100%;
+    padding: 8px 16px;
+    font-weight: normal;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+#searchbox:empty:before {
+    display: block;
+    color: rgb(153, 153, 153);
+    padding: 16px;
+}
+
+searchbox:empty {
+    padding: 0;
+    background: none;
+    border: dashed 3px #ddd;
+    box-shadow: none;
+    border-radius: 4px;
+    margin-bottom: 24px;
+}
+
+searchbox:empty:before {
+    content: "Uncomment the searchBox widget to add a search bar.";
+}
+*/
