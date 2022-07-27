@@ -1,79 +1,49 @@
-/* global instantsearch */
+import React, {useRef} from 'react'
+import algoliasearch from 'algoliasearch/lite'
+import {
+    Configure,
+    Hits,
+    InstantSearch,
+    Pagination,
+    SearchBox,
+} from 'react-instantsearch-hooks-web'
 
-import { hitTemplate } from "./helpers";
+import Hit from './components/hit.js'
+import Modal from './components/modal.jsx'
 
-const search = instantsearch({
-    appId: "RO95H65NEO",
-    apiKey: "eb980e41546c08d3e422562074fa0380",
-    indexName: "crawler_help_center",
-    routing: true,
-    searchParameters: {
-        hitsPerPage: 5,
-        attributesToSnippet: ["description:24"],
-        snippetEllipsisText: " [...]"
-    }
-});
+const searchClient = algoliasearch(
+    'RO95H65NEO',
+    '8d249abc4671e5554fe8f451ffa5db50',
+)
+/**
+ * add snipet to return smaller description
+ * fix breadcrumbs
+ * fix results returning as a numbered list
+ * add side bar with preview
+ * add highlight in the description
+ */
 
-// Uncomment the following widget to add hits list.
+function App() {
+    const modal = useRef(null)
+    return (
+        <InstantSearch
+            searchClient={searchClient}
+            indexName="crawler_help_center">
+            <header>
+                <Configure hitsPerPage={15} />
+                <SearchBox
+                    placeholder="What are you searching for?"
+                    onSubmit={() => modal.current.open()}
+                />
+            </header>
+            <main>
+                <Modal ref={modal}>
+                    <Hits hitComponent={Hit} />
+                    <Pagination />
+                </Modal>
+            </main>
+        </InstantSearch>
+    )
+}
 
-search.addWidget(
-    instantsearch.widgets.hits({
-        container: "#hits",
-        templates: {
-            empty: "No results.",
-            item: function (hit) {
-                return hitTemplate(hit);
-            }
-        }
-    })
-);
-
-// Uncomment the following widget to add a search bar.
-
-search.addWidget(
-    instantsearch.widgets.searchBox({
-        container: "#searchbox",
-        placeholder: "Search for products",
-        autofocus: false
-    })
-);
-
-// Uncomment the following widget to add search stats.
-
-search.addWidget(
-    instantsearch.widgets.stats({
-        container: "#stats",
-        templates: {
-            body(hit) {
-                return `<span role="img" aria-label="emoji">⚡️</span> <strong>${
-                    hit.nbHits
-                }</strong> results found ${
-                    hit.query != "" ? `for <strong>"${hit.query}"</strong>` : ``
-                } in <strong>${hit.processingTimeMS}ms</strong>`;
-            }
-        }
-    })
-);
-
-// Uncomment the following widget to add categories list.
-
-search.addWidget(
-    instantsearch.widgets.refinementList({
-        container: "#categories",
-        attributeName: "type",
-        autoHideContainer: false,
-        templates: {
-            header: "Sources"
-        }
-    })
-);
-
-// Uncomment the following widget to add pagination.
-
-search.addWidget(
-    instantsearch.widgets.pagination({
-        container: "#pagination"
-    })
-);
-
-search.start();
+export default App

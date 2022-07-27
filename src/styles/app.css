@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import './variables/fonts.modules.css';
+@import './variables/colors.modules.css';
+@import './modal.css';
 
 * {
     box-sizing: border-box;
@@ -9,19 +11,14 @@ html {
 }
 
 html,
-body {
-    padding: 0;
-    margin: 0;
-}
 
 body {
+    font-family: var(--font-family-sans-serif);
     min-height: 100%;
-    padding: 24px;
     font-size: 14px;
     line-height: 24px;
     overflow-y: scroll;
     display: flex;
-    font-family: "Open Sans", sans-serif;
     background: #f0f2f5;
     flex-direction: column;
 }
@@ -34,6 +31,14 @@ em {
     font-style: normal;
     font-weight: bold;
     text-decoration: underline;
+}
+
+article {
+    border-bottom: 1px solid var(--ds-gray-300);
+}
+article:hover {
+    background: var(--ds-blue-700);
+    color: var(--ds-white);
 }
 
 .search-container {
@@ -170,6 +175,10 @@ em {
 .ais-hits {
     display: inline-block;
     flex-wrap: wrap;
+}
+
+.ais-Hits ol {
+    list-style-type: none;
 }
 
 .ais-refinement-list--header,
@@ -393,17 +402,17 @@ footer {
 #brands:empty:before,
 #price:empty:before {
     display: block;
-    color: #999;
+    color: rgb(153, 153, 153);
     padding: 16px;
 }
 
-#searchbox:empty,
-#hits:empty,
-#categories:empty,
-#stats:empty,
-#pagination:empty,
-#brands:empty,
-#price:empty {
+searchbox:empty,
+hits:empty,
+categories:empty,
+stats:empty,
+pagination:empty,
+brands:empty,
+price:empty {
     padding: 0;
     background: none;
     border: dashed 3px #ddd;
@@ -411,18 +420,18 @@ footer {
     border-radius: 4px;
 }
 
-#searchbox:empty,
-#hits:empty,
-#categories:empty,
-#brands:empty {
+searchbox:empty,
+hits:empty,
+categories:empty,
+brands:empty {
     margin-bottom: 24px;
 }
 
-#searchbox:empty:before {
+searchbox:empty:before {
     content: "Uncomment the searchBox widget to add a search bar.";
 }
 
-#hits:empty:before {
+hits:empty:before {
     content: "Uncomment the hits widget to add hits list.";
 }
 
@@ -434,6 +443,44 @@ footer {
     content: "Uncomment the categories widget to add categories list.";
 }
 
-#pagination:empty:before {
+pagination:empty:before {
     content: "Uncomment the pagination widget to add pagination.";
 }
+
+/* CUSTOM */
+
+.ais-Highlight-highlighted {
+    background: var(--ds-blue-400);
+}
+
+/* Breadcrumbs */
+.ais-Breadcrumb ul {
+    list-style-type: none;
+}
+
+.ais-Breadcrumb-link {
+    cursor: pointer;
+}
+
+/* Pagination styles */
+.ais-Pagination ul {
+    list-style-type: none;
+    display: flex;
+}
+.ais-Pagination li {
+    padding: 1%;
+}
+
+#app {
+    display: flex;
+}
+
+.myCrumb {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+    --text-opacity: 1;
+    color: rgba(129,145,247,var(--text-opacity));
+}
+
