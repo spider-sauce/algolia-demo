@@ -6,10 +6,10 @@ export function hitTemplate(hit) {
       </div>-->
       <div class="hit-content">
         <div>
-          <div class="hit-name"><a  href="${ hit.url }">${hit._highlightResult.name.value}</a></div>
+          <div class="hit-name"><a  href="${hit.url}">${hit._highlightResult.name.value}</a></div>
           <div class="hit-description">${hit._snippetResult.description.value}</div>
         </div>
       </div>
     </div>
-  `;
+  `
 }
