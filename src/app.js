@@ -7,6 +7,7 @@ import {
     Pagination,
     SearchBox,
 } from 'react-instantsearch-hooks-web'
+import 'instantsearch.css/themes/reset.css'
 
 import Hit from './components/hit.js'
 import Modal from './components/modal.jsx'
@@ -29,19 +30,15 @@ function App() {
         <InstantSearch
             searchClient={searchClient}
             indexName="crawler_help_center">
-            <header>
+            <Modal ref={modal}>
                 <Configure hitsPerPage={15} />
                 <SearchBox
-                    placeholder="What are you searching for?"
+                    placeholder="🔎 Search"
                     onSubmit={() => modal.current.open()}
                 />
-            </header>
-            <main>
-                <Modal ref={modal}>
-                    <Hits hitComponent={Hit} />
-                    <Pagination />
-                </Modal>
-            </main>
+                <Hits hitComponent={Hit} />
+                <Pagination />
+            </Modal>
         </InstantSearch>
     )
 }
