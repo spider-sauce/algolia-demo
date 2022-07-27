@@ -60,7 +60,7 @@
 .modal > .modal-body {
   z-index: 2;
   position: relative;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   background-color: var(--ds-white);
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 4px;
@@ -68,7 +68,7 @@
   overflow-y: auto;
   max-width: 70%;
   max-height: 90%;
-  padding: 15px 20px;
+  /* padding: 15px 20px; */
   color: var(--ds-gray-700);
 }
 

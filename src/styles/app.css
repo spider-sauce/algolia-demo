@@ -1,6 +1,7 @@
 @import './variables/fonts.modules.css';
 @import './variables/colors.modules.css';
 @import './modal.css';
+@import './reset.css';
 
 * {
     box-sizing: border-box;
@@ -35,24 +36,11 @@ em {
 
 article {
     border-bottom: 1px solid var(--ds-gray-300);
+    padding: 8px 24px 8px 24px;
 }
 article:hover {
     background: var(--ds-blue-700);
     color: var(--ds-white);
-}
-
-.search-container {
-    flex-grow: 1;
-    display: flex;
-    width: 960px;
-    min-height: 100%;
-    margin: 0 auto;
-}
-
-@media (max-width: 1007px) {
-    .search-container {
-        width: 100%;
-    }
 }
 
 #categories,
@@ -70,15 +58,10 @@ article:hover {
 #categories,
 #brands,
 #price,
-.ais-hits--item,
-.ais-search-box--input {
+.ais-hits--item {
     height: auto;
     background: #fff;
     border-radius: 4px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-}
-
-.ais-search-box--input:focus {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -91,70 +74,6 @@ article:hover {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-}
-
-#searchbox {
-    flex-grow: 0;
-    margin-bottom: 8px;
-}
-
-#searchbox,
-#stats {
-    flex-grow: 0;
-}
-
-.ais-search-box {
-    position: relative;
-    height: auto;
-    width: 100%;
-    max-width: 100%;
-}
-
-.ais-search-box--magnifier,
-.ais-search-box--reset {
-    position: absolute;
-    top: 0;
-    left: inherit;
-    margin: 14px 16px;
-    cursor: pointer;
-}
-
-.ais-search-box--magnifier svg,
-.ais-search-box--reset svg {
-    width: 13px;
-    height: 13px;
-    display: block;
-}
-
-.ais-search-box--magnifier svg {
-    fill: #5468ff;
-}
-
-.ais-search-box--reset svg {
-    fill: #ed5a6a;
-}
-
-.ais-search-box--magnifier {
-    right: 0;
-}
-
-.ais-search-box--reset {
-    background: none;
-    padding: 0;
-    border: none;
-    right: 30px;
-}
-
-.ais-search-box--input {
-    width: 100%;
-    padding: 8px 16px;
-    font-weight: normal;
-    border: none;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    -webkit-appearance: none;
-    appearance: none;
 }
 
 #stats {
@@ -179,6 +98,8 @@ article:hover {
 
 .ais-Hits ol {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .ais-refinement-list--header,
@@ -393,8 +314,6 @@ footer {
 }
 
 /* Placeholders */
-
-#searchbox:empty:before,
 #hits:empty:before,
 #categories:empty:before,
 #stats:empty:before,
@@ -406,7 +325,6 @@ footer {
     padding: 16px;
 }
 
-searchbox:empty,
 hits:empty,
 categories:empty,
 stats:empty,
@@ -420,15 +338,10 @@ price:empty {
     border-radius: 4px;
 }
 
-searchbox:empty,
 hits:empty,
 categories:empty,
 brands:empty {
     margin-bottom: 24px;
-}
-
-searchbox:empty:before {
-    content: "Uncomment the searchBox widget to add a search bar.";
 }
 
 hits:empty:before {
